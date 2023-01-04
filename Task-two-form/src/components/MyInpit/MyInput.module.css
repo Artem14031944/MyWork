@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 350px;
+    height: 50px;
+    border: 1px solid var(--color-gray);
+    border-radius: 3px;
+    padding-left: 15px;
+    margin: 0 0 15px 0;
+}
+
+.inputError {
+    width: 350px;
+    height: 50px;
+    border: 1px solid var(--color-red);
+    border-radius: 3px;
+    padding-left: 15px;
+    margin: 0 0 15px 0;
+}
+
+.error {
+    color: var(--color-red);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.container input:active, 
+.container input:hover, 
+.container input:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.star {
+    color: var(--color-red);
+}

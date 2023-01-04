@@ -1,0 +1,22 @@
+.container {
+    width: 450px;
+    height: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 30px 25px 30px;
+}
+
+.title {
+   font-size: 25px;
+   color: var(--color-black);
+}
+
+.podTitle {
+    font-size: 15px;
+    color: var(--color-black);
+    margin: 15px 0 25px 0;
+}
+
