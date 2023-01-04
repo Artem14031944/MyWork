@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, ChangeEvent } from 'react';
+import { FC, FormEvent, FocusEvent } from 'react';
 import styles from './MyInput.module.css';
 
 interface IInput {
@@ -10,7 +10,7 @@ interface IInput {
     placeholder: string;
     textError: string;
     error: boolean;
-    onBlur: any;
+    onBlur: (e: FocusEvent<HTMLInputElement>) => void;
 };
 
 

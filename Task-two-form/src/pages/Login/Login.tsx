@@ -1,9 +1,10 @@
 import { FC, useState, useEffect, FormEvent, FocusEvent } from 'react';
+import { ILogin } from '../../App';
 import MyInput from '../../components/MyInpit/MyInput';
 import MyButton from '../../components/MyButton/MyButton';
 import styles from './Login.module.css';
 
-const Login: FC = () => {
+const Login: FC<ILogin> = ({ isLogin, setLogin }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,6 +28,8 @@ const Login: FC = () => {
            setErrorPassword(false);
            setEmailDirty(false);
            setPasswordDirty(false);
+
+           setLogin(true);
         }
     };
 
@@ -40,7 +43,7 @@ const Login: FC = () => {
     }; 
 
     const passwordHandler = (value: string) => {
-        if(value.length <= 8) {
+        if(value.length <= 7) {
             setErrorPassword(true);
         } else {
             setErrorPassword(false);

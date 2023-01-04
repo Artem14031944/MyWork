@@ -4,13 +4,13 @@ import styles from './MyButton.module.css';
 interface IButton {
     text: string;
     type: "button" | "submit" | "reset";
-    disabled: boolean
+    disabled?: boolean;
+    onClick?: () => void;
 };
 
 const MyButton: FC<IButton> = ({
-    text,
-    type,
-    disabled
+    text, type,
+    disabled, onClick
 }) => {
 
   return (
@@ -18,6 +18,7 @@ const MyButton: FC<IButton> = ({
         className={disabled ? `${styles.buttonDisabled}` : `${styles.buttonActive}`} 
         type={type}
         disabled={disabled}
+        onClick={onClick}
     >
         {text}
     </button>
