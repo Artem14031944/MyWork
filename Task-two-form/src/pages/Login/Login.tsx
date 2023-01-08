@@ -83,9 +83,10 @@ const Login: FC<ILogin> = ({ isLogin, setLogin }) => {
             <p className={styles.podTitle}>Для существующих пользователей</p>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <MyInput
+                    id={"email"}
                     name={"email"}
                     value={email || ""}
-                    setValue={setEmail}
+                    onChange={setEmail}
                     onBlur={blurHandler}
                     label={'E-Mail:'}
                     type={"mail"}
@@ -94,9 +95,10 @@ const Login: FC<ILogin> = ({ isLogin, setLogin }) => {
                     textError={'Укажите корректный email адрес'}
                 />
                 <MyInput
+                    id={"password"}
                     name={"password"}
                     value={password || ""}
-                    setValue={setPassword}
+                    onChange={setPassword}
                     onBlur={blurHandler}
                     label={'Пароль:'}
                     type={"password"}

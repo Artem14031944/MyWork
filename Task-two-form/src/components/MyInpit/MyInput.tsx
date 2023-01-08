@@ -2,9 +2,10 @@ import { FC, FormEvent, FocusEvent } from 'react';
 import styles from './MyInput.module.css';
 
 interface IInput {
+    id: string;
     name: string;
     value: string;
-    setValue: (value: string) => void;
+    onChange: (value: string) => void;
     label: string;
     type: string;
     placeholder: string;
@@ -15,26 +16,26 @@ interface IInput {
 
 
 const MyInput: FC<IInput> = ({
-    name, value, setValue,
+    name, value, onChange,
     label, type, error,
     placeholder, textError, onBlur
 }) => {
 
-    const onChange = (e: FormEvent<HTMLInputElement>) => {
-        setValue(e.currentTarget?.value);
-    };
-
     return (
         <div className={styles.container}>
-            <label>{label} <span className={styles.star}>*</span></label>
+            <label htmlFor='label'>
+                {label}<span className={styles.star}>*</span>
+            </label>
             <input 
                 name={name}
                 className={error ? `${styles.inputError}` : `${styles.input}`}
                 value={value} 
-                onChange={onChange}
+                onChange={(e: FormEvent<HTMLInputElement>) => {
+                    onChange(e.currentTarget?.value)}}
                 type={type}  
                 placeholder={placeholder}
                 onBlur={onBlur}
+                data-testid="add-data-input"
             />
           {error && <p className={styles.error}>{textError}</p>}  
         </div>   
